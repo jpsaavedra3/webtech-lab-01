@@ -1,0 +1,166 @@
+/* ---------- Base ---------- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, "Segoe UI", Arial, sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;       /* contraste 4.5:1+ sobre fondo blanco */
+  background: #ffffff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: #0b4f8a;        /* azul con contraste suficiente sobre blanco */
+}
+
+/* Foco visible en todo elemento navegable con Tab */
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 3px solid #0b4f8a;
+  outline-offset: 2px;
+}
+
+/* ---------- Header / Nav (Flexbox) ---------- */
+
+.site-header {
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.nav-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  list-style: none;
+  margin: 0.5rem 0 0;
+  padding: 0;
+}
+
+.nav-list a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+/* ---------- Layout general ---------- */
+
+main {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+section {
+  margin-bottom: 3rem;
+}
+
+aside {
+  background: #f2f2f2;
+  border-left: 4px solid #0b4f8a;
+  padding: 0.75rem 1rem;
+  margin: 1rem 0;
+}
+
+figure {
+  margin: 1.5rem 0;
+}
+
+figcaption {
+  font-size: 0.9rem;
+  color: #444;
+  margin-top: 0.5rem;
+}
+
+/* ---------- Skills (Grid) ---------- */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+  list-style: none;
+  padding: 0;
+}
+
+.skills-grid li {
+  background: #eef4fa;
+  padding: 0.75rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* ---------- Proyectos (Grid) ---------- */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+
+/* ---------- Formulario ---------- */
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+  max-width: 400px;
+}
+
+input,
+textarea {
+  padding: 0.5rem;
+  font: inherit;
+  border: 1px solid #999;
+  border-radius: 4px;
+}
+
+button {
+  padding: 0.6rem 1.4rem;
+  font: inherit;
+  font-weight: 600;
+  background: #0b4f8a;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #08375f;
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+  padding: 1.5rem 1rem;
+  border-top: 1px solid #ddd;
+  font-size: 0.9rem;
+}
+
+/* ---------- Responsive: reflow bajo 600px (cubre el caso 375px) ---------- */
+
+@media (max-width: 600px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+}

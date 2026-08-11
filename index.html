@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juan Pablo Saavedra — Página personal</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="site-header">
+    <h1>Juan Pablo Saavedra</h1>
+    <nav aria-label="Navegación principal">
+      <ul class="nav-list">
+        <li><a href="#sobre-mi">Sobre mí</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="sobre-mi">
+      <h2>Sobre mí</h2>
+      <p>
+        Estudio Ingeniería Civil en Computación, ingresé el <time datetime="2024">2024</time> y
+        actualmente estoy en tercer año. Me gusta hacer deporte, hablo inglés y me apasiona el
+        mountain bike. El verano pasado trabajé en Estados Unidos en Biofiltro. También puedes
+        seguirme en <a href="https://www.instagram.com/saavedra0_/" target="_blank" rel="noopener noreferrer">Instagram</a>.
+      </p>
+
+      <aside>
+        <p><strong>Dato random:</strong> cuando no estoy programando, probablemente esté arriba de una bicicleta de montaña.</p>
+      </aside>
+
+      <figure>
+        <img src="img/foto.jpg" alt="Juan Pablo Saavedra caminando por un valle rocoso con la cordillera de los Andes de fondo, en un día soleado" width="400">
+        <figcaption>Trekking en la cordillera de los Andes.</figcaption>
+      </figure>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="skills-grid">
+        <li>Python</li>
+        <li>Java</li>
+        <li>Git</li>
+        <li>HTML &amp; CSS</li>
+        <li>Inglés</li>
+      </ul>
+    </section>
+
+    <section id="proyectos">
+      <h2>Proyectos y experiencia</h2>
+      <div class="cards-grid">
+
+        <article class="card">
+          <h3>Práctica en Biofiltro</h3>
+          <p>
+            Trabajé durante el <time datetime="2025-summer">verano 2025</time> en
+            <a href="https://www.biofiltro.com" target="_blank" rel="noopener noreferrer">Biofiltro</a>,
+            una empresa con operaciones en Estados Unidos, ganando experiencia profesional
+            fuera de Chile.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Mountain bike</h3>
+          <p>
+            Practico mountain bike de forma constante. Es mi principal actividad fuera de
+            la universidad y una de las cosas que más disfruto hacer en mi tiempo libre.
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <form action="#" method="post">
+        <div class="form-row">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="form-row">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-row">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+
+  </main>
+
+  <footer>
+    <address>
+      Contacto: <a href="mailto:jpsaavedra3@miuandes.cl">jpsaavedra3@miuandes.cl</a> ·
+      <a href="https://github.com/jpsaavedra3" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </address>
+    <p>
+      Código fuente de esta página en
+      <a href="https://github.com/jpsaavedra3/webtech-lab-01" target="_blank" rel="noopener noreferrer">webtech-lab-01</a>.
+    </p>
+  </footer>
+
+</body>
+</html>
