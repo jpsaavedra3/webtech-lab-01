@@ -69,7 +69,40 @@
           </p>
         </article>
 
+
       </div>
+    </section>
+
+    <section id="coleccion">
+      <h2>Mi colección</h2>
+
+      <form id="form-filtro">
+        <label for="filtro-texto">Buscar</label>
+        <input type="text" id="filtro-texto" placeholder="Filtrar por nombre...">
+      </form>
+
+      <div id="filtro-categorias"></div>
+
+      <p id="mensaje-vacio" hidden>No se encontraron ítems.</p>
+
+      <ul id="lista-items"></ul>
+
+      <h3>Agregar ítem</h3>
+      <form id="form-agregar">
+        <div class="form-row">
+          <label for="nuevo-titulo">Título</label>
+          <input type="text" id="nuevo-titulo" required>
+        </div>
+        <div class="form-row">
+          <label for="nuevo-categoria">Categoría</label>
+          <input type="text" id="nuevo-categoria" required>
+        </div>
+        <div class="form-row">
+          <label for="nuevo-descripcion">Descripción</label>
+          <input type="text" id="nuevo-descripcion" required>
+        </div>
+        <button type="submit">Agregar</button>
+      </form>
     </section>
 
     <section id="contacto">
