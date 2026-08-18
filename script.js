@@ -110,3 +110,56 @@ listaItems.addEventListener("click", (e) => {
   item.classList.toggle("favorito", !marcado);
   e.target.textContent = !marcado ? "Quitar favorito" : "Marcar favorito";
 });
+
+// --- validación del formulario de contacto ---
+const formContacto = document.querySelector("#contacto form");
+const campoNombre = document.getElementById("nombre");
+const campoEmail = document.getElementById("email");
+const campoMensaje = document.getElementById("mensaje");
+const confirmacion = document.getElementById("confirmacion-contacto");
+
+function mostrarError(idError, texto) {
+  document.getElementById(idError).textContent = texto;
+}
+
+function validarContacto() {
+  let esValido = true;
+
+  if (campoNombre.value.trim() === "") {
+    mostrarError("error-nombre", "El nombre es obligatorio.");
+    esValido = false;
+  } else {
+    mostrarError("error-nombre", "");
+  }
+
+  const emailValido = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(campoEmail.value.trim());
+  if (!emailValido) {
+    mostrarError("error-email", "Ingresa un correo válido.");
+    esValido = false;
+  } else {
+    mostrarError("error-email", "");
+  }
+
+  if (campoMensaje.value.trim() === "") {
+    mostrarError("error-mensaje", "El mensaje no puede estar vacío.");
+    esValido = false;
+  } else {
+    mostrarError("error-mensaje", "");
+  }
+
+  return esValido;
+}
+
+formContacto.addEventListener("submit", (e) => {
+  e.preventDefault();
+  confirmacion.hidden = true;
+
+  if (validarContacto()) {
+    confirmacion.hidden = false;
+    formContacto.reset();
+  }
+});
+
+[campoNombre, campoEmail, campoMensaje].forEach(campo => {
+  campo.addEventListener("input", validarContacto);
+});
