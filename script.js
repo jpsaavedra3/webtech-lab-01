@@ -60,3 +60,23 @@ inputFiltro.addEventListener("input", () => {
 document.getElementById("form-filtro").addEventListener("submit", (e) => {
   e.preventDefault();
 });
+
+// --- botones de categoría (dificultad) ---
+const contenedorCategorias = document.getElementById("filtro-categorias");
+const categorias = [...new Set(cerros.map(c => c.dificultad))];
+
+categorias.forEach(cat => {
+  const btn = document.createElement("button");
+  btn.type = "button";
+  btn.textContent = cat;
+  btn.dataset.categoria = cat;
+  contenedorCategorias.appendChild(btn);
+});
+
+contenedorCategorias.addEventListener("click", (e) => {
+  if (e.target.tagName !== "BUTTON") return;
+
+  const categoria = e.target.dataset.categoria;
+  const filtrados = cerros.filter(cerro => cerro.dificultad === categoria);
+  render(filtrados);
+});
