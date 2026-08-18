@@ -130,3 +130,17 @@ textarea {
   display: block;
   min-height: 1.1em;
 }
+
+body.tema-oscuro {
+  background: #121212;
+  color: #f0f0f0;
+}
+
+body.tema-oscuro a {
+  color: #7cb8f0;
+}
+
+body.tema-oscuro .site-header,
+body.tema-oscuro footer {
+  border-color: #333;
+}

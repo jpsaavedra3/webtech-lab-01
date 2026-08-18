@@ -163,3 +163,11 @@ formContacto.addEventListener("submit", (e) => {
 [campoNombre, campoEmail, campoMensaje].forEach(campo => {
   campo.addEventListener("input", validarContacto);
 });
+
+const btnTema = document.getElementById("btn-tema");
+
+btnTema.addEventListener("click", () => {
+  const activo = document.body.classList.toggle("tema-oscuro");
+  btnTema.setAttribute("aria-pressed", String(activo));
+  btnTema.textContent = activo ? "Modo claro" : "Modo oscuro";
+});
