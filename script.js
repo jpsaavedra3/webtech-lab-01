@@ -61,7 +61,7 @@ document.getElementById("form-filtro").addEventListener("submit", (e) => {
   e.preventDefault();
 });
 
-// --- botones de categoría (dificultad) ---
+
 const contenedorCategorias = document.getElementById("filtro-categorias");
 const categorias = [...new Set(cerros.map(c => c.dificultad))];
 
@@ -80,3 +80,21 @@ contenedorCategorias.addEventListener("click", (e) => {
   const filtrados = cerros.filter(cerro => cerro.dificultad === categoria);
   render(filtrados);
 });
+
+
+const formAgregar = document.getElementById("form-agregar");
+
+formAgregar.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const nuevoCerro = {
+    nombre: document.getElementById("nuevo-titulo").value,
+    dificultad: document.getElementById("nuevo-categoria").value,
+    congestion: document.getElementById("nuevo-descripcion").value,
+  };
+
+  cerros.push(nuevoCerro);
+  render(cerros);
+  formAgregar.reset();
+});
+
