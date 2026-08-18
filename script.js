@@ -46,3 +46,17 @@ function render(lista) {
 }
 
 render(cerros);
+
+const inputFiltro = document.getElementById("filtro-texto");
+
+inputFiltro.addEventListener("input", () => {
+  const texto = inputFiltro.value.toLowerCase();
+  const filtrados = cerros.filter(cerro =>
+    cerro.nombre.toLowerCase().includes(texto)
+  );
+  render(filtrados);
+});
+
+document.getElementById("form-filtro").addEventListener("submit", (e) => {
+  e.preventDefault();
+});
