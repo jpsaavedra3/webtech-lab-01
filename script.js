@@ -98,3 +98,15 @@ formAgregar.addEventListener("submit", (e) => {
   formAgregar.reset();
 });
 
+const listaItems = document.getElementById("lista-items");
+
+listaItems.addEventListener("click", (e) => {
+  if (!e.target.classList.contains("btn-favorito")) return;
+
+  const item = e.target.closest(".item-cerro");
+  const marcado = e.target.getAttribute("aria-pressed") === "true";
+
+  e.target.setAttribute("aria-pressed", String(!marcado));
+  item.classList.toggle("favorito", !marcado);
+  e.target.textContent = !marcado ? "Quitar favorito" : "Marcar favorito";
+});
