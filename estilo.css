@@ -123,3 +123,10 @@ textarea {
   border: 2px solid #0b4f8a;
   background: #eef4fa;
 }
+
+.error {
+  color: #b00020;
+  font-size: 0.85rem;
+  display: block;
+  min-height: 1.1em;
+}
