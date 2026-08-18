@@ -1,3 +1,4 @@
+
 const cerros = [
   { nombre: "Manquehue",    dificultad: "Difícil", congestion: "Media" },
   { nombre: "Durazno",      dificultad: "Media",   congestion: "Alta"  },
@@ -12,7 +13,7 @@ function crearItem(cerro) {
   li.className = "item-cerro";
   li.dataset.dificultad = cerro.dificultad;
 
-  const titulo = document.createElement("h4");
+  const titulo = document.createElement("h3");
   titulo.textContent = cerro.nombre;
 
   const dificultad = document.createElement("p");
@@ -63,8 +64,12 @@ document.getElementById("form-filtro").addEventListener("submit", (e) => {
 
 
 const contenedorCategorias = document.getElementById("filtro-categorias");
-const categorias = [...new Set(cerros.map(c => c.dificultad))];
-
+const categorias = [];
+cerros.forEach(c => {
+  if (!categorias.includes(c.dificultad)) {
+    categorias.push(c.dificultad);
+  }
+});
 categorias.forEach(cat => {
   const btn = document.createElement("button");
   btn.type = "button";
@@ -72,6 +77,11 @@ categorias.forEach(cat => {
   btn.dataset.categoria = cat;
   contenedorCategorias.appendChild(btn);
 });
+const btnTodos = document.createElement("button");
+btnTodos.type = "button";
+btnTodos.textContent = "Todos";
+btnTodos.dataset.categoria = "";
+contenedorCategorias.appendChild(btnTodos);
 
 contenedorCategorias.addEventListener("click", (e) => {
   if (e.target.tagName !== "BUTTON") return;
@@ -111,7 +121,6 @@ listaItems.addEventListener("click", (e) => {
   e.target.textContent = !marcado ? "Quitar favorito" : "Marcar favorito";
 });
 
-// --- validación del formulario de contacto ---
 const formContacto = document.querySelector("#contacto form");
 const campoNombre = document.getElementById("nombre");
 const campoEmail = document.getElementById("email");
