@@ -16,6 +16,7 @@
         <li><a href="#sobre-mi">Sobre mí</a></li>
         <li><a href="#skills">Skills</a></li>
         <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#precios">Precios del taller</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
@@ -106,6 +107,23 @@
       </form>
     </section>
 
+    <section id="precios">
+      <h2>Precios del taller</h2>
+
+      <p id="precios-estado">Cargando la lista de precios…</p>
+      <ul id="precios-lista"></ul>
+
+      <h3>Buscar un servicio</h3>
+      <form id="form-servicio">
+        <div class="form-row">
+          <label for="servicio-id">Id del servicio</label>
+          <input type="number" id="servicio-id" min="1" required>
+        </div>
+        <button type="submit">Buscar</button>
+      </form>
+      <div id="servicio-detalle"></div>
+    </section>
+
     <section id="contacto">
       <h2>Contacto</h2>
       <form>
@@ -143,6 +161,7 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="precios.js"></script>
 
 </body>
 </html>

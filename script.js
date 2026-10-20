@@ -36,7 +36,7 @@ function render(lista) {
   const contenedor = document.getElementById("lista-items");
   const mensajeVacio = document.getElementById("mensaje-vacio");
 
-  contenedor.innerHTML = "";
+  contenedor.replaceChildren();
 
   if (lista.length === 0) {
     mensajeVacio.hidden = false;
